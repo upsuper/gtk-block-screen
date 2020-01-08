@@ -1,0 +1,11 @@
+[package]
+name = "gtk-block-screen"
+version = "0.1.0"
+authors = ["Xidorn Quan <me@upsuper.org>"]
+edition = "2018"
+publish = false
+
+[dependencies]
+gtk = "0.8.0"
+gdk = "0.12.0"
+cairo-rs = "0.8.0"
