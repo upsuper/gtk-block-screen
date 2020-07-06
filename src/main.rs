@@ -1,5 +1,6 @@
-use gdk::enums::key;
+use gdk::keys::constants::Escape;
 use gdk::{ModifierType, WindowState};
+use glib::translate::ToGlib;
 use gtk::prelude::*;
 use gtk::{AccelFlags, AccelGroup, Button, ButtonBox, ColorButton, Window};
 use std::cell::Cell;
@@ -8,7 +9,7 @@ use std::rc::Rc;
 fn main() {
     gtk::init().unwrap();
 
-    let builder = gtk::Builder::new_from_string(include_str!("main.glade"));
+    let builder = gtk::Builder::from_string(include_str!("main.glade"));
     let window: Window = builder.get_object("window").unwrap();
     window.connect_hide(|_| gtk::main_quit());
     window.show_all();
@@ -19,7 +20,7 @@ fn main() {
         let window = window.clone();
         let bg_color = bg_color.clone();
         accel_group.connect_accel_group(
-            key::Escape,
+            Escape.to_glib(),
             ModifierType::empty(),
             AccelFlags::empty(),
             move |_, _, _, _| {

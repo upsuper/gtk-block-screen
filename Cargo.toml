@@ -7,6 +7,7 @@ edition = "2018"
 publish = false
 
 [dependencies]
-gtk = "0.8.0"
-gdk = "0.12.0"
-cairo-rs = "0.8.0"
+gdk = "0.13.0"
+glib = "0.10.0"
+gtk = "0.9.0"
+cairo-rs = "0.9.0"
