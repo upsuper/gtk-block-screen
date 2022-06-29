@@ -58,7 +58,6 @@ fn main() {
         });
     }
     {
-        let bg_color = bg_color.clone();
         window.connect_draw(move |_, ctx| {
             if let Some(c) = bg_color.get() {
                 ctx.set_source_rgba(c.red(), c.green(), c.blue(), c.alpha());
